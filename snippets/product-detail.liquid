@@ -97,6 +97,7 @@
         {% endif %}
         {% include 'social-sharing' %}
     {% else %}
+  	<div class="description user-content">{{ product-detail.description | strip_html | truncate: 100 }}</div>
   	<a class="more" href="{{ product_url }}">More Details &rarr;</a>
     {% endif %}
 </div>

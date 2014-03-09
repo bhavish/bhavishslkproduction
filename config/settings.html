@@ -710,9 +710,45 @@
                 <option value="right">Right</option>
             </select></td>
         </tr>
-      <tr>
-          <td><label>Link URL (eg /collections/mens)</label></td>
+        <tr>
+            <td><label>Link URL (eg /collections/mens)</label></td>
             <td><input type="text" name="home_ad_1_url" /></td>
+        </tr>
+
+    	<tr>
+            <td><label for="left_top_img">Left Top Image</label></td>
+            <td><input type="file" id="left_top_img" name="left_top.jpg" /></td>
+            <td><input type="text" name="left_top_img_url" /></td>          
+        </tr>
+    	<tr>
+            <td><label for="left_bottom_img">Left Bottom Image</label></td>
+            <td><input type="file" id="left_bottom_img" name="left_bottom.jpg" /></td>
+            <td><input type="text" name="left_bottom_img_url" /></td>          
+        </tr>
+    	<tr>
+            <td><label for="center_img">Center Image</label></td>
+            <td><input type="file" id="center_img" name="center_banner.jpg" /></td>
+            <td><input type="text" name="center_img_url" /></td>          
+        </tr>
+    	<tr>
+            <td><label for="right_top_img">Right Top Image</label></td>
+            <td><input type="file" id="right_top_img" name="right_top.jpg" /></td>
+            <td><input type="text" name="right_top_img_url" /></td>          
+        </tr>
+    	<tr>
+            <td><label for="right_bottom_img">Right Bottom Image</label></td>
+            <td><input type="file" id="right_bottom_img" name="right_bottom.jpg" /></td>
+            <td><input type="text" name="right_bottom_img_url" /></td>          
+        </tr>
+    	<tr>
+            <td><label for="layout_top_img">Layout 1 Image</label></td>
+            <td><input type="file" id="layout_top_img" name="layout_1_img.jpg" /></td>
+            <td><input type="text" name="layout_top_img_url" /></td>          
+        </tr>
+    	<tr>
+            <td><label for="layout_top_right_img">Layout 2 Image</label></td>
+            <td><input type="file" id="layout_top_right_img" name="layout_2_img.jpg" /></td>
+            <td><input type="text" name="layout_top_right_img_url" /></td>          
         </tr>
     </table>
 <hr class="sst" />
@@ -1026,7 +1062,8 @@
             <td><label for="soc_icons_loc">Show icons in:</label></td>
             <td><select name="soc_icons_loc" id="soc_icons_loc">
                 <option value="head">Header</option>
-                <option value="foot">Footer</option>
+                <option value="foot">
+              </option>
                 <option value="both">Both</option>
             </select></td>
             <td><label for="social_col">Icon color</label></td>
@@ -1264,7 +1301,7 @@
         <tr>
             <td><label for="ad_3_title">Ad 3 - Title + Alt text</label></td>
             <td><input type="text" id="ad_3_title" name="ad_3_title" /></td>
-        </tr>
+        </tr>      
     </table>
     <hr class="sst" />
     <h2 class="sb sst">Misc Options</h2>

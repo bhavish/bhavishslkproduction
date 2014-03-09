@@ -23,7 +23,12 @@
     </div><!-- /.image-links -->
     {% endif %}
     {% endunless %}
-    
+    <!-- <hr>
+  <div class="footer-messages">
+    <div class="message-1"><p>Secure Payment</p></div>
+    <div class="message-2"><p>Easy Shopping</p></div>
+    <div class="message-3"><p>Free Shipping</p></div>
+  </div>-->
     {% if linklists.footer.links.size > 0 %}
     <div class="nav-row">
         {% include 'main-navigation' with 'footer' %}
@@ -31,16 +36,6 @@
     {% endif %}
     
     <div class="lower cf">
-        <div class="copyright">
-            {% if settings.logo_small_show_foot %}
-            <img src="{{ 'logo_small.png' | asset_url }}" alt="{{ shop.name }}" />
-            {% endif %}
-          <span class="copy">&copy; Copyright {{ "now" | date: "%Y" }} <a href="/">{{ shop.name }}.</a></span>
-            
-            {% if settings.show_cc_link == true %}Theme by <a href="http://www.cleanthemes.co.uk" target="_blank">Clean Themes.</a>{% endif %}
-            
-            {{ powered_by_link }}
-        </div><!-- /.copyright -->
         
         <div class="interact">
             {% if settings.footer_signup_show %}
@@ -69,6 +64,18 @@
             </ul>
             {% endif %}            
         </div>
+      
+        <div class="copyright">
+            {% if settings.logo_small_show_foot %}
+            <img src="{{ 'logo_small.png' | asset_url }}" alt="{{ shop.name }}" />
+            {% endif %}
+          <span class="copy">&copy; Copyright {{ "now" | date: "%Y" }} <a href="/">{{ shop.name }}.</a></span>
+            
+            {% if settings.show_cc_link == true %}Theme by <a href="http://www.cleanthemes.co.uk" target="_blank">Clean Themes.</a>{% endif %}
+            
+            <!-- {{ powered_by_link }} -->
+        </div><!-- /.copyright -->
+
     </div>
     
 </div><!-- /#pagefooter -->

@@ -7,7 +7,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    
     {% if template == '404' %}
     <title>Page Not Found | {{ shop.name }}</title>
     {% else %}
@@ -80,11 +79,42 @@ Shopify.money_format = '{{shop.money_format | replace: "'", '"'}}';
 </style>
 
     {{ content_for_header }}
+<!-- Added by Lexity. DO NOT REMOVE/EDIT -->
+<meta name="google-site-verification" content="MfT3T1u_VHbY1QHrfhk7aNQVANybsbfsTA2QIT_5o2s" />
+<script type="text/javascript">
+(function (d, w) {
+  var x = d.getElementsByTagName('SCRIPT')[0], g = d.createElement('SCRIPT'); 
+  g.type = 'text/javascript';
+  g.async = true;
+  g.src = ('https:' == d.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  x.parentNode.insertBefore(g, x);
+}(document, window));
+</script>
+<!-- End of addition by Lexity. DO NOT REMOVE/EDIT -->
 </head>
 
 <body class="template-{{ template | split: '.' | first }}">
   <div id="pageheader">
-        <div class="logo-area logo-pos-{{ settings.logo_pos }} cf">
+    <div class="logo-area logo-pos-{{ settings.logo_pos }} cf">
+     <div class ="top-row">
+      {% if shop.customer_accounts_enabled %}
+        <ul>
+            <li class="account-links">
+                {% if customer %}
+                    <span class="your-acct"><a href="/account">Your account</a></span>
+              		<span class="slash">/</span>
+                    <span class="logout">{{ 'Logout' | customer_logout_link }}</span>
+                {% else %}
+                    {% if settings.nav_show_reg %}
+                        <span class="register">{{ 'Register' | customer_register_link }}</span> <span class="slash">/</span>
+                    {% endif %}
+                    <span class="login">{{ 'Login' | customer_login_link }}</span>
+                {% endif %}
+            </li>
+        </ul>
+      {% endif %}
+    </div>
+
             {% capture logo_html %}
             <div class="logo container">
                 <a href="/" title="{{ shop.name }}">
@@ -138,7 +168,7 @@ Shopify.money_format = '{{shop.money_format | replace: "'", '"'}}';
     </div><!-- /#pageheader -->
     
     {% capture extra_navigation_items %}
-    {% if shop.customer_accounts_enabled %}
+<!--    {% if shop.customer_accounts_enabled %}
         <ul>
             <li class="account-links">
                 {% if customer %}
@@ -153,7 +183,7 @@ Shopify.money_format = '{{shop.money_format | replace: "'", '"'}}';
                 {% endif %}
             </li>
         </ul>
-    {% endif %}
+    {% endif %} -->
     {% endcapture %}
     
     <div id="main-nav" class="nav-row">
@@ -219,6 +249,6 @@ Shopify.money_format = '{{shop.money_format | replace: "'", '"'}}';
             }(document, 'script', 'facebook-jssdk'));</script>
     {% endif %}
   {% endif %}
-  
+  {% include 'zopim' %}  
 </body>
 </html>

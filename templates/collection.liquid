@@ -2,14 +2,16 @@
 
 <div class="container">
     <div class="page-header cf">
-        {% if settings.coll_desc_pos == 'below' %}
+<!--     {% if settings.coll_desc_pos == 'below' %}
             <h1 class="majortitle">{{ collection.title | escape }}</h1>
-        {% endif %}
-        
+        {% endif %} -->
+      {% if collection.image%}
+      <img src="{{ collection.image.src | collection_img_url: 'original' }}" />
+      {% endif %}
         {% if collection.description != '' %}
-        <div class="user-content {% if settings.lightbox_imgs %}lightboximages{% endif %}">
+<!--        <div class="user-content {% if settings.lightbox_imgs %}lightboximages{% endif %}">
             {{ collection.description }}
-        </div>
+        </div> -->
         {% endif %}
         
         {% if settings.coll_desc_pos == 'above' %}

@@ -67,6 +67,70 @@
 {% endif %}
 {% endcapture %}
 
+{% capture banner_show%}
+<div id = "homepageBanner-1">
+<!--  <div class="row1 cf">
+    {% if settings.home_col_full_dis %}<div class="container">{% endif %}
+    <div class = "left-col"><img src=" {{ 'slide_1.jpg' | asset_url}}"></div>
+    <div class = "right-col"><img src=" {{ 'ad_1_img.jpg' | asset_url}}"></div>
+    {% if settings.home_col_full_dis %}</div>{% endif %}
+  </div> -->
+  <div class="image-links cf">
+{% if settings.home_col_full_dis %}<div class="container">{% endif %}
+      <div class = "image-link block-1"><img src=" {{ 'ad_1_img.jpg' | asset_url}}"></div>
+      <div class = "image-link block-2"><img src=" {{ 'ad_2_img.jpg' | asset_url}}"></div>
+      <div class = "image-link block-3"><img src=" {{ 'ad_3_img.jpg' | asset_url}}"></div>      
+  {% if settings.home_col_full_dis %}</div>{% endif %}
+  </div>
+</div>
+{% endcapture%}
+
+{% capture banner_section_1%}
+<div id = "homepageBanner">
+<!--  <div class="firstrow cf">
+    {% if settings.home_col_full_dis %}<div class="container">{% endif %}
+    <div class="col1">
+          <a class="img-cont" href="{{ settings.layout_top_img_url }}">
+            <img src="{{'layout_1_img.jpg' | asset_url }}"> </a>
+    </div>
+    <div class="col2">
+    <a class="img-cont" href="{{ settings.layout_top_right_img_url }}">
+      <img src="{{'layout_2_img.jpg' | asset_url }}">
+      </a>
+    </div>
+    {% if settings.home_col_full_dis %}</div>{% endif %} 
+  </div> -->
+  <div class="mainrow cf">
+   {% if settings.home_col_full_dis %}<div class="container">{% endif %}
+    <div class = "subcol col-1">
+    <a class="img-cont" href="{{ settings.left_top_img_url }}">
+      <img src="{{ 'left_top.jpg' | asset_url }}">
+      </a>
+    <a class="img-cont" href="{{ settings.left_bottom_img_url }}">
+      <img src="{{ 'left_bottom.jpg' | asset_url }}">
+      </a>
+    </div> 
+    <div class = "subcol col-2">
+          <a class="img-cont" href="{{ settings.center_img_url }}">
+      <img src="{{ 'center_banner.jpg' | asset_url}}">
+      </a>
+    </div> 
+    <div class = "subcol col-3">
+      
+    <a class="img-cont" href="{{ settings.right_top_img_url }}">
+      <img src="{{ 'right_top.jpg' | asset_url}}">
+      </a>
+      
+    <a class="img-cont" href="{{ settings.right_bottom_img_url }}">
+      <img src="{{ 'right_bottom.jpg' | asset_url}}">
+      </a>
+    </div>     
+   {% if settings.home_col_full_dis %}</div>{% endif %} 
+  </div>
+</div>
+{% endcapture %}
+
+
 {% capture ad_html %}
 {% if settings.home_ad_1_show %}
 <div class="slide full-width-image">
@@ -190,7 +254,9 @@ E: Product row 1
 F: Product row 2
 G: Product row 3
 H: Collection list
+I: Product Banners
 {% endcomment %}
+
 
 {% if settings.home_order == empty %}
     {% assign split_order = 'A-B-C-D-E-F-G-H' | split: '-' %}
@@ -207,5 +273,6 @@ H: Collection list
 {% elsif item == 'F' %} <!-- Slot 6 --> {{ coll_2_html }}
 {% elsif item == 'G' %} <!-- Slot 7 --> {{ coll_3_html }}
 {% elsif item == 'H' %} <!-- Slot 8 --> {{ collection_list_html }}
+{% elsif item == 'I' %} <!-- Slot 8 --> {{ banner_section_1 }}
 {% endif %}
 {% endfor %}
